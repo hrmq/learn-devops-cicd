@@ -1,0 +1,10 @@
+pipline {
+    agent any
+    stages {
+        stage('build') {
+            echo 'Running Build Automation'
+            sh  './gradlew build --no-deamom'
+            archiveArtifact artifcats: 'dist/trainSchedule.zip'
+        }
+    }
+}
